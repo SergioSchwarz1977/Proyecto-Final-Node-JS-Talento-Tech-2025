@@ -1,4 +1,4 @@
-import { generateToken } from "../data/tokentest.js";
+import { generateToken } from "../data/tokenTest.js";
 
 export const login = (req, res) => {
     console.log(req.body)

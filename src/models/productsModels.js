@@ -20,9 +20,19 @@ function createProducts(producto) {
 
 function deleteProducts(id) {
     return (
-        new Promise(async (res,rej)=>{
+        new Promise(async (res, rej) => {
             try {
-                await deleteDoc(doc(db, "products", id))
+                const docRef = doc(db, "products", id);
+                const docSnap = await getDoc(docRef);
+
+                // Si no existe, rechazamos con error marcado (status 404)
+                if (!docSnap.exists()) {
+                    const err = new Error("No se encontro el producto");
+                    err.status = 404;
+                    return rej(err);
+                }
+
+                await deleteDoc(docRef);
                 console.log("Producto eliminado con exito")
                 res("Producto eliminado con exito")
             } catch (error) {
@@ -30,7 +40,7 @@ function deleteProducts(id) {
             }
         })
     )
-    }
+}
 
 //deleteProducts("kKk4LP7OZGrw6kS59zrg")
 

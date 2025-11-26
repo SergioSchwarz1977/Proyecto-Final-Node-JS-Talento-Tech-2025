@@ -9,7 +9,6 @@ import {authentication } from "./src/middleware/auth.middleware.js";
 const app = express();
 const PORT = process.env.PORT
 
-
 const corsConfig = {
     origin: 'http://localhost:3000',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -18,10 +17,6 @@ const corsConfig = {
     optionsSuccessStatus: 204,
     exposedHeaders: ['Content-Length', 'X-Kuma-Revision'],
 }
-const objeto = {
-    clave : "valor"
-}
-
 app.use(cors(corsConfig));
 app.use(express.json());
 app.use("/api",routeLogin);
