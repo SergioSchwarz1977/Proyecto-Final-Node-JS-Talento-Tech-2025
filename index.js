@@ -33,7 +33,7 @@ app.use((req,rest,next)=>{
     rest.status(404).send("No se encontró recurso ó ruta invalida")
 })
 
-// app.listen(PORT,()=>{
-//     console.log(`Servidor corriendo en puerto" , http://localhost:${PORT}`)
-// })
+app.listen(PORT,()=>{
+    console.log(`Servidor corriendo en puerto" , http://localhost:${PORT}`)
+})
 export default app;
