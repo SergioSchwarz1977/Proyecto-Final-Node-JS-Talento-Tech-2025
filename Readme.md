@@ -203,5 +203,5 @@ Respuesta (200): mensaje de confirmación
 
 ---
 
-Si quieres, puedo dejar ejemplos de colección de Postman listos o ajustar el `README` con instrucciones para desplegar en producción (Heroku, Vercel, Railway, etc.).
+Se encuentra desplegado en Vercel con un Domains ``
 
