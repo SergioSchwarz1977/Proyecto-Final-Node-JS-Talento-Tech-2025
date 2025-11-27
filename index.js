@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT
 
 const corsConfig = {
-    origin: 'http://localhost:3000',
+    origin: ['http://localhost:3000'] ['http://mi_sitio_web.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
