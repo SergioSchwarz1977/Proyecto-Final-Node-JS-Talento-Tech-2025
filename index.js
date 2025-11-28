@@ -7,10 +7,10 @@ import routeLogin from "./src/routes/products.auth.route.js";
 import {authentication } from "./src/middleware/auth.middleware.js";
 
 const app = express();
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000;
 
 const corsConfig = {
-    origin: ['http://localhost:3000'] ['http://mi_sitio_web.com'],
+    origin: ['http://localhost:3000','http://mi_sitio_web.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,

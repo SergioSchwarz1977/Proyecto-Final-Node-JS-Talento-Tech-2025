@@ -52,7 +52,7 @@ export const deleteProductController = async (req, res) => {
         if (!id) {
             res.status(400).json({ message: "ID del producto es requerido" })
         } else {
-            const result = await productsService.deleteProductService(id);
+            const result = await productsService.deleteProductsService(id);
             res.status(200).json({ message: "Producto eliminado exitosamente", result });
         }
     } catch (error) {

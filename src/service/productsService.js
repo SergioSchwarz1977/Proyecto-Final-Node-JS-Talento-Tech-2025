@@ -27,17 +27,18 @@ export const getProductByIdService = async (id) => {
 };
 
 export const createProductService = async (productData) => {
-    return(
+    return (
         new Promise(async (res, rej) => {
             try {
                 const newProduct = await createProducts(productData);
-                res({ message: "Producto creado exitosamente" , product: newProduct });
+                res({ message: "Producto creado exitosamente", product: newProduct });
             } catch (error) {
                 rej(error);
-            }           
-        }   
-    )   
-)};
+            }
+        }
+        )
+    )
+};
 
 export const updateProductService = async (id, producto) => {
     return (
@@ -51,16 +52,15 @@ export const updateProductService = async (id, producto) => {
         })
     );
 };
-
-export const deleteProductService = async (id) => {
-    return(
-        new Promise(async(res,rej)=>{
-            try {
-                const result = await deleteProducts(id)
-                res(result)
-            } catch (error) {
-                rej(error)
-            }
-        })
-    );  
-};
+export async function deleteProductsService(id) {
+    return new Promise(async (res, rej) => {
+        try {
+            await deleteProducts(id);
+            console.log("Producto eliminado con ID:", id);
+            res();
+        } catch (error) {
+            console.error("Error al eliminar documento:", error);
+            rej("Error al eliminar el producto", error);
+        }
+    });
+}

@@ -203,5 +203,6 @@ Respuesta (200): mensaje de confirmación
 
 ---
 
-Se encuentra desplegado en Vercel con un Domains ``
+Se encuentra desplegado en Vercel.
+
 

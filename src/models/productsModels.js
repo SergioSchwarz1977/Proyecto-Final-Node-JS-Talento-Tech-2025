@@ -24,12 +24,10 @@ function deleteProducts(id) {
             try {
                 const docRef = doc(db, "products", id);
                 const docSnap = await getDoc(docRef);
-
-                // Si no existe, rechazamos con error marcado (status 404)
                 if (!docSnap.exists()) {
                     const err = new Error("No se encontro el producto");
                     err.status = 404;
-                    return rej(err);
+                    return rej({ message: "❌ No se encontro el producto" });
                 }
 
                 await deleteDoc(docRef);
