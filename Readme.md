@@ -203,6 +203,8 @@ Respuesta (200): mensaje de confirmación
 
 ---
 
-Se encuentra desplegado en Vercel.
+Se encuentra desplegado en Vercel los archivos de BackEnd.
+
+Los archivos que contemplan al FrontEnd se encuentran en arreglos para luego hacer el despliegue
 
 

@@ -7,6 +7,8 @@ config();
 const secret_key = process.env.JWT_SECRET_KEY;
 
 export const authentication = (req, res, next) => {
+    if (!req.headers['authorization']) return res.sendStatus(401);
+    console.log(req.headers['authorization']);
     const token = req.headers['authorization'].split(" ")[1];
     console.log(token)
 
